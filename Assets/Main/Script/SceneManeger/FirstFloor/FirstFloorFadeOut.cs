@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class FadeOut : MonoBehaviour
+public class FirstFloorFadeOut : MonoBehaviour
 {
     public CanvasGroup canvasGroup;
 
