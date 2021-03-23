@@ -12,7 +12,7 @@ public class FirstFloorNextFloor : MonoBehaviour
     [SerializeField]
     public GameObject FadePanel;
     public PlayerController controller;
-    public FirstFloorFadeOut fade;
+    public FadeOut fade;
     private void Start()
     {
         FadePanel.SetActive(false);
