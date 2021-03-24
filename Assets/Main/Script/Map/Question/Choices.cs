@@ -21,19 +21,17 @@ public class Choices : MonoBehaviour
 
     public void OnclickCorrectAnswer()
     {
-        if (Answer == true)
-        {
+       
             Active = false;
             CorrectAnswer = true;
             Answer = false;
             controller.PlayerOperation = true;
             Debug.Log("正解！");
-        }
+        
     }
     public void OnClickInCorrectAnswer()
     {
-        if (Answer == true) 
-        {
+        
             Active = false;
             CorrectAnswer = false;
             Answer = false;
@@ -44,7 +42,7 @@ public class Choices : MonoBehaviour
                 Debug.Log("再回答可能");
             }));
             Debug.Log("不正解...");
-        }
+        
     }
 
     private IEnumerator WaitTime(float waitTime, Action action)
