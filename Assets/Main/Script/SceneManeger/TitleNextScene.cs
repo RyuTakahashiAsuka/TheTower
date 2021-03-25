@@ -23,7 +23,7 @@ public class TitleNextScene : MonoBehaviour
     public void Onclick()
     {
         Panel.SetActive(true);
-        canvasGroupe.DOFade(1,3f).OnComplete(FadeComplete);
+        canvasGroupe.DOFade(1,3f).SetDelay(1.0f).OnComplete(FadeComplete);
 
     }
 

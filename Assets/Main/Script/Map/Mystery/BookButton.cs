@@ -11,7 +11,7 @@ public class BookButton : MonoBehaviour
     [SerializeField]
     public GameObject ButtonNeartext;
     public GameObject BookCase;
-    public GameObject MoveText;
+    public GameObject TextMove;
     
 
     private bool NearBookBuuton = false;
@@ -22,9 +22,9 @@ public class BookButton : MonoBehaviour
     {
         NearBookBuuton = false;
         ButtonOnOff = false;
-
+        TextMove.SetActive(false);
         ButtonNeartext.SetActive(false);
-        MoveText.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -65,16 +65,10 @@ public class BookButton : MonoBehaviour
 
     void BookCaseMove()
     {
-        BookCase.transform.DOMove(new Vector3(5f,0,0), 3f).SetRelative(true).OnComplete(BookCaseMoveText);
+        BookCase.transform.DOMove(new Vector3(5f, 0, 0), 3f).SetRelative(true).OnComplete(StartAnimation);
     }
-    void BookCaseMoveText()
-    {
-        MoveText.SetActive(true);
-        
-        StartCoroutine(waitTime(3.0f, () =>
-         {
-             MoveText.SetActive(false);
-         }));
+    void StartAnimation(){
+        TextMove.SetActive(true);
     }
     private IEnumerator waitTime(float WaitTime,Action action)
     {

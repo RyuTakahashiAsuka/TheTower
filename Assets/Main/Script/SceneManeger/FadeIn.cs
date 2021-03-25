@@ -23,7 +23,6 @@ public class FadeIn : MonoBehaviour
 
     void FadeComplete()
     {
-        Destroy(FadePanel);
-        Destroy(this.gameObject, 3f);
+        FadePanel.SetActive(false);
     }
 }

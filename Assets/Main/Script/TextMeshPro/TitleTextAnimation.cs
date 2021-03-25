@@ -20,8 +20,9 @@ public class TitleTextAnimation : MonoBehaviour
         {
             DOTween.Sequence().
                 Append(Animator.DOFadeChar(i, 1, 2f))
-                .AppendInterval(0.3f)
-                .Append(Animator.DOColorChar(i, new Color(1f, 1f, 0.8f), 0.2f).SetLoops(2, LoopType.Yoyo))
+                .Join(Animator.DOOffsetChar(i,Vector3.up*20,1f).SetEase(Ease.InOutFlash,2))
+                .AppendInterval(0.4f)
+                .Append(Animator.DOColorChar(i, new Color(1f, 0.5f, 1f), 0.2f).SetLoops(2, LoopType.Yoyo))
                 .SetDelay(i * 0.1f);
         }
        
