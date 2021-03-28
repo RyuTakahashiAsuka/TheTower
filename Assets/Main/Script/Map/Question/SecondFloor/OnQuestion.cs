@@ -1,60 +1,99 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
 
 public class OnQuestion : MonoBehaviour
 {
     [SerializeField]
-    private GameObject QuestionPanel;
+    private GameObject Panel;
     [SerializeField]
-    private GameObject OnQuestionText;
+    private GameObject Text;
     public PlayerController controller;
-    public Choices choices;
+    public Choices Active;
 
+    public TextMeshProUGUI AnswerText;
+    public TextMeshProUGUI RetryText;
+    public string[] answer = new string[2];
 
-    private bool ON;
-
+    bool Trigger = false;
     // Start is called before the first frame update
     void Start()
     {
-        ON = false;
-        QuestionPanel.SetActive(false);
-        OnQuestionText.SetActive(false);
+        Panel.transform.localScale = Vector3.zero;
+        AnswerText.transform.localScale = Vector3.zero;
+        RetryText.transform.localScale = Vector3.zero;
+        Text.SetActive(false);
+        Screen.lockCursor = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (choices.Active == false)
+        if (Trigger == true && Input.GetKeyUp(KeyCode.E))
         {
-            QuestionPanel.SetActive(false);
-        }
-        if (ON == true && choices.Answer == true && Input.GetKey(KeyCode.E)) 
-        {
-            QuestionPanel.SetActive(true);
+            Panel.transform.DOScale(0.8f, 0.5f);
+            Text.SetActive(false);
             controller.PlayerOperation = false;
-            choices.Active = true;
+            Screen.lockCursor = false;
         }
-        if (choices.Active == true || choices.CorrectAnswer == true)
+        if (Active.Answer == false)
         {
-            OnQuestionText.SetActive(false);
+            Panel.transform.DOScale(0f, 0.5f).OnComplete(Correct);
+        }
+        if (Active.CorrectAnswer == true)
+        {
+            AnswerText.text = answer[0];
+        }else if(Active.CorrectAnswer == false)
+        {
+            AnswerText.text = answer[1];
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Correct()
     {
-        Debug.Log("接触");
-        if (other.tag == "Player")
+        AnswerText.transform.DOScale(1f, 0.5f).OnComplete(Correctdelete);
+        Active.Answer = true;
+
+        if (Active.CorrectAnswer == false)
         {
-            ON = true;
-            OnQuestionText.SetActive(true);
+            Invoke("ReTryTime", 4f);
         }
     }
-    private void OnTriggerExit(Collider other)
+    void Correctdelete()
     {
-        if(other.tag == "Player")
+        if (Active.CorrectAnswer == true)
         {
-            OnQuestionText.SetActive(false);
+            AnswerText.transform.DOScale(0f, 0.5f).SetDelay(1f);
+        }
+    }
+    void ReTryTime()
+    {
+        AnswerText.transform.DOScale(0f, 0.5f);
+        RetryText.transform.DOScale(1f, 0.5f).OnComplete(RetryDelete);
+    }
+    void RetryDelete()
+    {
+        RetryText.transform.DOScale(0f, 0.5f).SetDelay(1f);
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Trigger = true;
+            Text.SetActive(true);
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Trigger = false;
+            Text.SetActive(false);
         }
     }
 }

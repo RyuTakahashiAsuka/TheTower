@@ -15,27 +15,26 @@ public class Choices : MonoBehaviour
     void Start()
     {
         Answer = true;
-        Active = false;
+      
         CorrectAnswer = false;
     }
 
     public void OnclickCorrectAnswer()
     {
-       
-            Active = false;
+   
             CorrectAnswer = true;
             Answer = false;
+        Screen.lockCursor = true;
             controller.PlayerOperation = true;
             Debug.Log("正解！");
-        
+            
     }
     public void OnClickInCorrectAnswer()
     {
-        
-            Active = false;
             CorrectAnswer = false;
             Answer = false;
             controller.PlayerOperation = true;
+        Screen.lockCursor = true;
             StartCoroutine(WaitTime(3.0f, () =>
             {
                 Answer = true;

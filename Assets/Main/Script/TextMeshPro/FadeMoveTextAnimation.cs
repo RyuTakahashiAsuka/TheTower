@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 
-public class FirstFloorMoveTextAnimation : MonoBehaviour
+public class FadeMoveTextAnimation : MonoBehaviour
 {
     TextMeshProUGUI moveText;
     DOTweenTMPAnimator TextAnimator;
@@ -16,9 +16,16 @@ public class FirstFloorMoveTextAnimation : MonoBehaviour
         moveText = GetComponent<TextMeshProUGUI>();
         moveText.DOFade(0, 0);
         TextAnimator = new DOTweenTMPAnimator(moveText);
-        FadeIn();
+        Animation = false;
     }
-    
+    void Update()
+    {
+        if(Animation == true)
+        {
+            FadeIn();
+            Animation = false;
+        }
+    }
     public void FadeIn()
     {
         for (int i = 0; i < TextAnimator.textInfo.characterCount; i++)
