@@ -7,11 +7,9 @@ public class PlayerController : MonoBehaviour
     //移動
     [SerializeField]
     public float Mainspeed = 20.0f;
-    public float dashSpeed = 2.0f;
+    public float dashSpeed = 1.5f;
     public float walkSpeed = 10.0f;
     public float gravity = 15.0f;
-    public float jumpSpeed = 8.0f;
-   
 
     private CharacterController controller;
     private Vector3 vector = Vector3.zero;
@@ -56,10 +54,7 @@ public class PlayerController : MonoBehaviour
             if (controller.isGrounded)
             {
                 Move();
-                if (Input.GetButton("Jump"))
-                {
-                    vector.y = jumpSpeed;
-                }
+                
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
                     dash = true;
