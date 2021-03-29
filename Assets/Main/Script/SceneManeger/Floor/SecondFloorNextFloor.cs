@@ -11,13 +11,21 @@ public class SecondFloorNextFloor : MonoBehaviour
     public PlayerController controller;
     public FadeOut fade;
     public Choices Answer;
+    public GameObject Collider;
+    
+
     private void Start()
     {
         FadePanel.SetActive(false);
+        Collider.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if(Answer.CorrectAnswer == true)
+        {
+            Collider.SetActive(false);
+        }
         if (other.tag == "Player" && Answer.CorrectAnswer == true) 
         {
             Debug.Log("接触");

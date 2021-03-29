@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ThirdFloorNextFloor : MonoBehaviour
+public class forthFloorNextScene : MonoBehaviour
 {
     [SerializeField]
     public GameObject FadePanel;
     public PlayerController controller;
     public FadeOut fade;
+    public Choices Answer;
     private void Start()
     {
         FadePanel.SetActive(false);
@@ -17,7 +18,7 @@ public class ThirdFloorNextFloor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && Answer.CorrectAnswer == true)
         {
             Debug.Log("接触");
             FadePanel.SetActive(true);
@@ -33,7 +34,7 @@ public class ThirdFloorNextFloor : MonoBehaviour
 
     void GoNextScene()
     {
-        SceneManager.LoadScene("fourthFloor");
+        SceneManager.LoadScene("FifthFloor");
     }
 
     private IEnumerator waitTime(float WaitTime, Action action)

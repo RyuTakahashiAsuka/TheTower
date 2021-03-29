@@ -10,7 +10,7 @@ public class Choices : MonoBehaviour
     public bool Answer;
     public bool Active;
 
-    public PlayerController controller;
+    public PlayerController PlayerController;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class Choices : MonoBehaviour
             CorrectAnswer = true;
             Answer = false;
         Screen.lockCursor = true;
-            controller.PlayerOperation = true;
+            PlayerController.PlayerOperation = true;
             Debug.Log("正解！");
             
     }
@@ -33,7 +33,7 @@ public class Choices : MonoBehaviour
     {
             CorrectAnswer = false;
             Answer = false;
-            controller.PlayerOperation = true;
+            PlayerController.PlayerOperation = true;
         Screen.lockCursor = true;
             StartCoroutine(WaitTime(3.0f, () =>
             {

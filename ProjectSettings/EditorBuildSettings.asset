@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Main/Scenes/GameScene/ThirdFloor.unity
     guid: e01964a0bc4c3574dab7ac8fe0a11579
   - enabled: 1
+    path: Assets/Main/Scenes/GameScene/fourthFloor.unity
+    guid: fdc84d49bf991844ab6c231efa189a23
+  - enabled: 1
+    path: Assets/Main/Scenes/GameScene/FifthFloor.unity
+    guid: e4c71bd76ec869141af8a7030f40be2e
+  - enabled: 1
     path: Assets/Main/Scenes/EpilogueScene.unity
     guid: ba7282197c9aa6f4684b92bb0d161477
   - enabled: 1

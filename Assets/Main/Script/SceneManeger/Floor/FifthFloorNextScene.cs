@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ThirdFloorNextFloor : MonoBehaviour
+public class FifthFloorNextScene : MonoBehaviour
 {
     [SerializeField]
     public GameObject FadePanel;
@@ -33,7 +33,7 @@ public class ThirdFloorNextFloor : MonoBehaviour
 
     void GoNextScene()
     {
-        SceneManager.LoadScene("fourthFloor");
+        SceneManager.LoadScene("EpilogueScene");
     }
 
     private IEnumerator waitTime(float WaitTime, Action action)

@@ -8,11 +8,11 @@ using DG.Tweening;
 public class OnQuestion : MonoBehaviour
 {
     [SerializeField]
-    private GameObject Panel;
+    private GameObject QuestionPanel;
     [SerializeField]
-    private GameObject Text;
-    public PlayerController controller;
-    public Choices Active;
+    private GameObject OnQuestionTrigger;
+    public PlayerController PlayerController;
+    public Choices Choice;
 
     public TextMeshProUGUI AnswerText;
     public TextMeshProUGUI RetryText;
@@ -22,10 +22,10 @@ public class OnQuestion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Panel.transform.localScale = Vector3.zero;
+        QuestionPanel.transform.localScale = Vector3.zero;
         AnswerText.transform.localScale = Vector3.zero;
         RetryText.transform.localScale = Vector3.zero;
-        Text.SetActive(false);
+        OnQuestionTrigger.SetActive(false);
         Screen.lockCursor = true;
     }
 
@@ -34,19 +34,19 @@ public class OnQuestion : MonoBehaviour
     {
         if (Trigger == true && Input.GetKeyUp(KeyCode.E))
         {
-            Panel.transform.DOScale(0.8f, 0.5f);
-            Text.SetActive(false);
-            controller.PlayerOperation = false;
+            QuestionPanel.transform.DOScale(0.8f, 0.5f);
+            OnQuestionTrigger.SetActive(false);
+            PlayerController.PlayerOperation = false;
             Screen.lockCursor = false;
         }
-        if (Active.Answer == false)
+        if (Choice.Answer == false)
         {
-            Panel.transform.DOScale(0f, 0.5f).OnComplete(Correct);
+            QuestionPanel.transform.DOScale(0f, 0.5f).OnComplete(Correct);
         }
-        if (Active.CorrectAnswer == true)
+        if (Choice.CorrectAnswer == true)
         {
             AnswerText.text = answer[0];
-        }else if(Active.CorrectAnswer == false)
+        }else if(Choice.CorrectAnswer == false)
         {
             AnswerText.text = answer[1];
         }
@@ -55,16 +55,16 @@ public class OnQuestion : MonoBehaviour
     void Correct()
     {
         AnswerText.transform.DOScale(1f, 0.5f).OnComplete(Correctdelete);
-        Active.Answer = true;
+        Choice.Answer = true;
 
-        if (Active.CorrectAnswer == false)
+        if (Choice.CorrectAnswer == false)
         {
             Invoke("ReTryTime", 4f);
         }
     }
     void Correctdelete()
     {
-        if (Active.CorrectAnswer == true)
+        if (Choice.CorrectAnswer == true)
         {
             AnswerText.transform.DOScale(0f, 0.5f).SetDelay(1f);
         }
@@ -85,7 +85,7 @@ public class OnQuestion : MonoBehaviour
         if (other.tag == "Player")
         {
             Trigger = true;
-            Text.SetActive(true);
+            OnQuestionTrigger.SetActive(true);
         }
     }
     void OnTriggerExit(Collider other)
@@ -93,7 +93,7 @@ public class OnQuestion : MonoBehaviour
         if (other.tag == "Player")
         {
             Trigger = false;
-            Text.SetActive(false);
+            OnQuestionTrigger.SetActive(false);
         }
     }
 }
