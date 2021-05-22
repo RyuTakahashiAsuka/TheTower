@@ -31,6 +31,7 @@ public class SecondButton : MonoBehaviour
         {
             if(OnFirstButton.OnFirstButton == true)
             {
+                OnSecondButton = true;
                 this.transform.DOMove(new Vector3(0.2f, 0f, 0f), 1f)
                     .SetRelative(true)
                     .OnComplete(OnButton);
@@ -43,15 +44,17 @@ public class SecondButton : MonoBehaviour
     }
     void OnButton()
     {
-        OnSecondButton = true;
         SuccessMoveTextAnimation.Animation = true;
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (OnSecondButton == false)
         {
-            NearButton = true;
-            NearButtonText.SetActive(true);
+            if (other.tag == "Player")
+            {
+                NearButton = true;
+                NearButtonText.SetActive(true);
+            }
         }
     }
     void OnTriggerExit(Collider other)

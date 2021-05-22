@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static ClearTime;
+using static ClearTimeText;
+
 
 public class ThirdFloorNextFloor : MonoBehaviour
 {
@@ -21,6 +24,8 @@ public class ThirdFloorNextFloor : MonoBehaviour
         {
             Debug.Log("接触");
             FadePanel.SetActive(true);
+            StartCount = false;
+            second = (int)oldSeconds;
             controller.PlayerOperation = false;
             fade.fadeStart = true;
             StartCoroutine(waitTime(4.0f, () =>

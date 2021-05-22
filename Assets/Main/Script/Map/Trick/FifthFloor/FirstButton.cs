@@ -26,7 +26,10 @@ public class FirstButton : MonoBehaviour
         {
             if (!OnFirstButton)
             {
-                this.transform.DOMove(new Vector3(0.2f, 0f, 0f), 1f).SetRelative(true).OnComplete(OnButton);
+                OnFirstButton = true;
+                this.transform.DOMove(new Vector3(0.2f, 0f, 0f), 1f)
+                    .SetRelative(true)
+                    .OnComplete(OnButton);
                 
             }
         }
@@ -34,15 +37,17 @@ public class FirstButton : MonoBehaviour
 
     void OnButton()
     {
-        OnFirstButton = true;
         MoveTextAnimation.Animation = true;
     }
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (OnFirstButton == false)
         {
-            ButtonNearText.SetActive(true);
-            NearButton = true;
+            if (other.tag == "Player")
+            {
+                ButtonNearText.SetActive(true);
+                NearButton = true;
+            }
         }
     }
     public void OnTriggerExit(Collider other)

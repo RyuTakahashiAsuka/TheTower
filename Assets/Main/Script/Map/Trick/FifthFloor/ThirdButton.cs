@@ -31,30 +31,36 @@ public class ThirdButton : MonoBehaviour
     {
         if(NearButton == true && Input.GetKey(KeyCode.E))
         {
-            if (OnFirstButton.OnFirstButton == true&& OnSecondButton.OnSecondButton == true)
-            {
-                this.transform.DOMove(new Vector3(0f, 0f, 0.2f), 1f)
-                    .SetRelative(true)
-                    .OnComplete(OnButton);
-            }
-            else
-            {
-                ErrorMoveTextAnimation.Animation = true;
+            if (!OnThirdButton) {
+                if (OnFirstButton.OnFirstButton == true && OnSecondButton.OnSecondButton == true)
+                {
+                    OnThirdButton = true;
+                    this.transform.DOMove(new Vector3(0f, 0f, 0.2f), 1f)
+                        .SetRelative(true)
+                        .OnComplete(OnButton);
+                }
+                else
+                {
+                    ErrorMoveTextAnimation.Animation = true;
+                }
             }
         }
     }
 
     void OnButton()
     {
-        OnThirdButton = true;
+        
         Move.Move = true;
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (OnThirdButton == false)
         {
-            NearButtonText.SetActive(true);
-            NearButton = true;
+            if (other.tag == "Player")
+            {
+                NearButtonText.SetActive(true);
+                NearButton = true;
+            }
         }
     }
     void OnTriggerExit(Collider other)

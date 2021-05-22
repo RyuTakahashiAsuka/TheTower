@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static ClearTime;
+using static ClearTimeText;
+
 
 public class forthFloorNextScene : MonoBehaviour
 {
@@ -22,6 +25,8 @@ public class forthFloorNextScene : MonoBehaviour
         {
             Debug.Log("接触");
             FadePanel.SetActive(true);
+            StartCount = false;
+            third = (int)oldSeconds;
             controller.PlayerOperation = false;
             fade.fadeStart = true;
             StartCoroutine(waitTime(4.0f, () =>

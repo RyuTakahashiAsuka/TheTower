@@ -15,7 +15,7 @@ public class BookButton : MonoBehaviour
     
 
     private bool NearBookBuuton = false;
-    private bool ButtonOnOff = false;
+    public bool ButtonOnOff = false;
 
     // Start is called before the first frame update
     void Start()

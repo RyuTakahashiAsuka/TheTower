@@ -6,10 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     //移動
     [SerializeField]
-    public float Mainspeed = 20.0f;
+    public float Mainspeed = 8.0f;
     public float dashSpeed = 1.5f;
     public float walkSpeed = 10.0f;
     public float gravity = 15.0f;
+
 
     private CharacterController controller;
     private Vector3 vector = Vector3.zero;
@@ -17,12 +18,13 @@ public class PlayerController : MonoBehaviour
     private float horizontal;
     private float vertical;
 
-    private bool dash = false;
+    
+    public static bool MoveOn = false;
+    public static bool dash = false;
+
     //カメラ
     [SerializeField]
     public GameObject Camera;
-
-   
     private Transform transform;
 
     private float CameraX;
@@ -44,39 +46,36 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         dash = false;
+        
         if (PlayerOperation == true) {
+            
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
 
             CameraX = Input.GetAxis("Mouse X");
             CameraY = Input.GetAxis("Mouse Y");
-
             if (controller.isGrounded)
             {
                 Move();
-                
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
                     dash = true;
                 }
+                
                 Dash();
             }
             vector.y -= gravity * Time.deltaTime;
             controller.Move(vector * Time.deltaTime);
             cameraMove();
-
-
-            
-
         }
     }
-
-    void Move()//移動
+    void Move()
     {
         vector = new Vector3(horizontal, 0, vertical);
         vector = transform.TransformDirection(vector);
         vector *= Mainspeed;
     }
+    
     void Dash()//ダッシュ
     {
         if (dash == true)
