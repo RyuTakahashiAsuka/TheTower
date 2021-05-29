@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3145485643928339127}
   - component: {fileID: 3145485643928339145}
   - component: {fileID: 3145485643928339126}
+  - component: {fileID: 2929660152333714717}
   m_Layer: 5
   m_Name: NextTask
   m_TagString: Untagged
@@ -78,3 +79,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u706B\u306E\u7389\u306E\u8FD1\u304F\u306B\u884C\u3063\u3066\u307F\u3088\u3046"
+--- !u!114 &2929660152333714717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3145485643928339124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f20f8f266048a4daf7b540e4fb79c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TaskNumCount: 0
+  TextContent: []

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5373448838237338537}
   - component: {fileID: 5384456617775579011}
   - component: {fileID: 5333125786666596309}
-  - component: {fileID: 5398254781494153499}
+  - component: {fileID: 4568471201626823563}
   m_Layer: 0
   m_Name: QuestionBook
   m_TagString: Untagged
@@ -95,7 +95,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 1.5}
---- !u!114 &5398254781494153499
+--- !u!114 &4568471201626823563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,15 +104,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5398055816068399851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecaa06d6efb0f024ea08c7fb6587c14b, type: 3}
+  m_Script: {fileID: 11500000, guid: 62a1f0d9f972d0c4e8328439834c5363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 0}
-  Text: {fileID: 0}
-  controller: {fileID: 0}
-  Active: {fileID: 0}
-  AnswerText: {fileID: 0}
-  RetryText: {fileID: 0}
-  answer:
-  - "\u6B63\u89E3"
-  - "\u4E0D\u6B63\u89E3"
+  ViewPanel: {fileID: 0}
+  NearText: {fileID: 0}
+  playerController: {fileID: 0}
+  Cursorshowhide: {fileID: 0}
