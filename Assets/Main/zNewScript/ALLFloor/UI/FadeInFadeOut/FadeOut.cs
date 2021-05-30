@@ -10,11 +10,11 @@ using DG.Tweening;
 public class FadeOut : MonoBehaviour
 {
     [SerializeField]
-    private NextSceneManagement next;//シーンマネジメント（フェード後にシーン切り替えをする為）
+    private NextSceneManagement nextSceneManager;//シーンマネジメント（フェード後にシーン切り替えをする為）
     
     private CanvasGroup canvasGroup;//キャンバスグループ
 
-    public bool fadeStart = false;//フェードスタート用のOn/Off
+    [HideInInspector] public bool fadeStart = false;//フェードスタート用のOn/Off
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +31,7 @@ public class FadeOut : MonoBehaviour
     }
     void fadeOut()
     {
-        canvasGroup.DOFade(1, 3f).OnComplete(next.NextScene);//3秒かけてフェードアウトした後、次シーンへ切り替え
+        canvasGroup.DOFade(1, 3f).OnComplete(nextSceneManager.NextScene);//3秒かけてフェードアウトした後、次シーンへ切り替え
     }
 
    

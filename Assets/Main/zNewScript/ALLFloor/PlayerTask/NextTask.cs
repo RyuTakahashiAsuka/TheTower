@@ -7,7 +7,7 @@ public class NextTask : MonoBehaviour
 {
     
     
-    public int TaskNumCount = 0;//現在のタスクナンバー
+    [HideInInspector]public int TaskNumCount = 0;//現在のタスクナンバー
 
     [SerializeField] string[] TextContent; //タスクテキストの内容
     
