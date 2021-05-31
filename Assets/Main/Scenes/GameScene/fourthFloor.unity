@@ -735,6 +735,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1288026815667984895, guid: 6a9acd95c95487b48a5ebdf212a5fd86,
+        type: 3}
+      propertyPath: fadeStartbool
+      value: 
+      objectReference: {fileID: 753188590}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a9acd95c95487b48a5ebdf212a5fd86, type: 3}
 --- !u!224 &375707597 stripped
@@ -831,7 +836,7 @@ PrefabInstance:
     - target: {fileID: 5724739134753279831, guid: e56f85b968af6854ea072b1f934bce3b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5724739134753279831, guid: e56f85b968af6854ea072b1f934bce3b,
         type: 3}
@@ -1146,7 +1151,7 @@ PrefabInstance:
     - target: {fileID: 8618516841923820125, guid: 9bbea4c02d54ae048b44f6f0ba909268,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8618516841923820125, guid: 9bbea4c02d54ae048b44f6f0ba909268,
         type: 3}
@@ -1449,7 +1454,7 @@ PrefabInstance:
     - target: {fileID: 2562984147619952173, guid: 055cb51669600704e899576c045833f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2562984147619952173, guid: 055cb51669600704e899576c045833f5,
         type: 3}
@@ -4983,9 +4988,9 @@ RectTransform:
   - {fileID: 115331748}
   - {fileID: 506623654}
   - {fileID: 753188589}
+  - {fileID: 1023614597}
   - {fileID: 1326785380}
   - {fileID: 516424080}
-  - {fileID: 1023614597}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5402,6 +5407,11 @@ PrefabInstance:
     - target: {fileID: 132755641807164599, guid: 87290474b477fc148a736cd5934ede37,
         type: 3}
       propertyPath: next
+      value: 
+      objectReference: {fileID: 93157946}
+    - target: {fileID: 132755641807164599, guid: 87290474b477fc148a736cd5934ede37,
+        type: 3}
+      propertyPath: nextSceneManager
       value: 
       objectReference: {fileID: 93157946}
     m_RemovedComponents: []

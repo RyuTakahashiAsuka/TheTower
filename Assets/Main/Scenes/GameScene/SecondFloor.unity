@@ -217,10 +217,10 @@ RectTransform:
   - {fileID: 1746574190}
   - {fileID: 1246887417}
   - {fileID: 1557426485}
-  - {fileID: 718965802}
   - {fileID: 1302702521}
-  - {fileID: 2113183064}
   - {fileID: 2012271327}
+  - {fileID: 718965802}
+  - {fileID: 2113183064}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3063,6 +3063,11 @@ PrefabInstance:
       propertyPath: next
       value: 
       objectReference: {fileID: 625889198}
+    - target: {fileID: 132755641807164599, guid: 87290474b477fc148a736cd5934ede37,
+        type: 3}
+      propertyPath: nextSceneManager
+      value: 
+      objectReference: {fileID: 625889198}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87290474b477fc148a736cd5934ede37, type: 3}
 --- !u!4 &1713755424 stripped
@@ -3200,6 +3205,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1288026815667984895, guid: 6a9acd95c95487b48a5ebdf212a5fd86,
+        type: 3}
+      propertyPath: fadeStartbool
+      value: 
+      objectReference: {fileID: 1557426486}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a9acd95c95487b48a5ebdf212a5fd86, type: 3}
 --- !u!224 &1922041408 stripped
@@ -3258,7 +3268,7 @@ PrefabInstance:
     - target: {fileID: 5724739134753279831, guid: e56f85b968af6854ea072b1f934bce3b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5724739134753279831, guid: e56f85b968af6854ea072b1f934bce3b,
         type: 3}
@@ -3801,7 +3811,7 @@ PrefabInstance:
     - target: {fileID: 2562984147619952173, guid: 055cb51669600704e899576c045833f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2562984147619952173, guid: 055cb51669600704e899576c045833f5,
         type: 3}
@@ -4575,6 +4585,11 @@ PrefabInstance:
       propertyPath: AnsTextAnimation
       value: 
       objectReference: {fileID: 6075905771785282969}
+    - target: {fileID: 5993432175126697191, guid: c40523d92f8e72942b0acba1d2db870d,
+        type: 3}
+      propertyPath: NextFloorStairs
+      value: 
+      objectReference: {fileID: 508342204}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c40523d92f8e72942b0acba1d2db870d, type: 3}
 --- !u!114 &6075905771785282968 stripped
@@ -4646,7 +4661,7 @@ PrefabInstance:
     - target: {fileID: 6944739981271310849, guid: 38514d12109846544912b441b1310458,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6944739981271310849, guid: 38514d12109846544912b441b1310458,
         type: 3}
@@ -4914,7 +4929,7 @@ PrefabInstance:
     - target: {fileID: 8618516841923820125, guid: 9bbea4c02d54ae048b44f6f0ba909268,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8618516841923820125, guid: 9bbea4c02d54ae048b44f6f0ba909268,
         type: 3}
