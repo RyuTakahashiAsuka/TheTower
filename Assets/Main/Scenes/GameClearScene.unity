@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 917805874}
   - component: {fileID: 917805876}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GameClearText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -739,6 +739,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1615878560067040340, guid: bbbe7d29b3de1d24ead08c419a134f4e,
+        type: 3}
+      propertyPath: CursorShow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6518619543865136939, guid: bbbe7d29b3de1d24ead08c419a134f4e,
         type: 3}
       propertyPath: m_Name
