@@ -3,27 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 /*追加*/
 using UnityEngine.UI;
-using static ClearTime;
 
 public class ClearTimeText : MonoBehaviour
 {
-    private Text Timetext;//クリア時間を表示する為のテキスト
 
-    /*各階層のクリア時間用変数*/
-    private int ClearTimeFinal;
-    
+    private Text Timetext;//クリア時間を表示する為のテキスト
+    public static int ClearTImeFainal;//最終的なスコア
 
     // Start is called before the first frame update
     void Start()
     {
+        
         Timetext = GetComponent<Text>();//テキストコンポーネント取得
-        ClearTimeFinal = ClearTimeAll/1000;//ミリ秒を秒に直す
     }
 
     // Update is called once per frame
     void Update()
     {
+       //ミリ秒を秒に直す
         /*それぞれの時間を表示*/
-        Timetext.text = $"Score\n{ClearTimeFinal.ToString()}秒";
+        Timetext.text = $"Score\n{ClearTImeFainal.ToString()}秒\n";
     }
 }

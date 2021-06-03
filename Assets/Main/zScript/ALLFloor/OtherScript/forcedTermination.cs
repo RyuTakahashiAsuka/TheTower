@@ -10,10 +10,11 @@ public class forcedTermination : MonoBehaviour
         /*ゲームの強制終了コマンド　エスケープキー*/
         if (Input.GetKey(KeyCode.Escape))
         {
+
             #if UNITY_EDITOR
-                        UnityEditor.EditorApplication.isPlaying = false;
+                    UnityEditor.EditorApplication.isPlaying = false;
             #else
-                        Application.Quit();
+                    Application.Quit();
             #endif
         }
     }

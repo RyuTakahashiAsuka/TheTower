@@ -28,6 +28,7 @@ public class FadeOut : MonoBehaviour
         if (fadeStart == true)//フェードスタートがTrueでフェードアウト開始
         {
             fadeOut();
+            fadeStart = false;
         }
     }
     void fadeOut()

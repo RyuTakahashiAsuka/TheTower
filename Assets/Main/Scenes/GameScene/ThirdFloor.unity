@@ -209,6 +209,11 @@ PrefabInstance:
       propertyPath: operation
       value: 
       objectReference: {fileID: 1816917236}
+    - target: {fileID: 8376434368157238615, guid: 4f01771fb86aea64a913315da12d8255,
+        type: 3}
+      propertyPath: NeedTimeCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f01771fb86aea64a913315da12d8255, type: 3}
 --- !u!114 &256911414 stripped
@@ -343,6 +348,11 @@ PrefabInstance:
     - target: {fileID: 1288026815667984895, guid: 6a9acd95c95487b48a5ebdf212a5fd86,
         type: 3}
       propertyPath: fadeStartbool
+      value: 
+      objectReference: {fileID: 1467896639}
+    - target: {fileID: 1288026815667984895, guid: 6a9acd95c95487b48a5ebdf212a5fd86,
+        type: 3}
+      propertyPath: fadestart
       value: 
       objectReference: {fileID: 1467896639}
     m_RemovedComponents: []
@@ -522,7 +532,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-96468
+  m_Name: pb_Mesh-222516
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
